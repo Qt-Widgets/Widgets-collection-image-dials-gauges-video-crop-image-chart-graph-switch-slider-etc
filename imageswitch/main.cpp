@@ -1,7 +1,8 @@
-﻿#include "frmmain.h"
+﻿#pragma execution_character_set("utf-8")
+
+#include "frmimageswitch.h"
 #include <QApplication>
 #include <QTextCodec>
-#include <QDesktopWidget>
 
 int main(int argc, char *argv[])
 {
@@ -22,16 +23,9 @@ int main(int argc, char *argv[])
     QTextCodec::setCodecForLocale(codec);
 #endif
 
-    frmMain w;
-    w.setWindowTitle("styledemo   Author: feiyangqingyun@163.com   QQ: 517216493");
+    frmImageSwitch w;
+    w.setWindowTitle("图片背景开关");
     w.show();
-
-    //居中显示窗体
-    QDesktopWidget deskWidget;
-    int deskWidth = deskWidget.availableGeometry().width();
-    int deskHeight = deskWidget.availableGeometry().height();
-    QPoint movePoint(deskWidth / 2 - w.width() / 2, deskHeight / 2 - w.height() / 2);
-    w.move(movePoint);
 
     return a.exec();
 }
